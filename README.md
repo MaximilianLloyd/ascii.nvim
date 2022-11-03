@@ -7,6 +7,7 @@ Easily get fun ascii art in your Neovim dashboard. Randomized or pick your favor
 ---
 
 ## Installaton
+
 - Install using your favorite plugin manager (here i'm using packer)
 
 ```lua
@@ -33,7 +34,9 @@ local options = {
 }
 ...
 ```
+
 Or get one at random
+
 ```lua
 ...
 local options = {
@@ -57,11 +60,13 @@ lua require("ascii").print_category("animals")
 ```
 
 Preview the art available in the subcategory.
+
 ```lua
 lua require("ascii").print_subcategory("animals", "dogs")
 ```
 
 Get a random art piece from a subcategory.
+
 ```lua
 lua require("ascii").get_random("animals", "dogs")
 ```
@@ -73,6 +78,7 @@ I created a small [rust cli tool](https://github.com/MaximilianLloyd/ascii-lua-t
 ---
 
 ### Todo
+
 - [ ] Add more art
 - [ ] Implement telescope extension
 - [ ] Random independant of category
