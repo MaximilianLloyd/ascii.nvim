@@ -2,7 +2,7 @@
 
 Easily get fun ascii art in your Neovim dashboard.
 
-!(Preview of ascii.nvim in neovim)[/preview.png]
+![Preview of ascii.nvim in neovim](/preview.png)
 ---
 
 ## Installaton
