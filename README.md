@@ -24,12 +24,9 @@ Set a specific art piece.
 ...
 local options = {
 	header = {
-		type = "text",
+		...
 	    val = ascii.art.animals.dogs.lucky,
-		opts = {
-			position = "center",
-			hl = "AlphaHeader",
-		},
+		...
 	},
 }
 ...
