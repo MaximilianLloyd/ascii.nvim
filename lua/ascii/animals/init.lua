@@ -1,7 +1,7 @@
-local dogs = require("animals.dogs")
+local dogs = require("ascii.animals.dogs")
 
-local animals = {
-	dogs,
+local M = {
+	dogs = dogs,
 }
 
-return animals
+return M
