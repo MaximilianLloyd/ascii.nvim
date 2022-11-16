@@ -68,6 +68,14 @@ Get a random art piece from a subcategory.
 lua require("ascii").get_random("animals", "dogs")
 ```
 
+## Categories
+
+- Animals
+	- [Dogs](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/dogs.lua)
+	- [Cats](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/cats.lua)
+	- [Lions](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/lions.lua)
+
+
 ## Create your own and contribute
 
 I created a small [rust cli tool](https://github.com/MaximilianLloyd/ascii-lua-table) that converts ascii art to a lua table, so you can easily contribute.
