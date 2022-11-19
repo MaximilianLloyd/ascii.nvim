@@ -1,27 +1,11 @@
-local animals = require("ascii.animals")
+local utils = require("ascii.utils")
+local ui = require("ascii.ui")
+
+local art = require("ascii.art")
 
 local M = {
-	art = {
-		animals = animals,
-	},
+	art = art
 }
-function DeepPrint(e)
-	-- if e is a table, we should iterate over its elements
-	--
-	if type(e) == "table" then
-		-- print("E", e)
-		--
-		for k, v in pairs(e) do -- for every element in the table
-			-- If string print it
-			if type(k) == "string" then
-				print("name:", k)
-			end
-			DeepPrint(v) -- recursively repeat the same procedure
-		end
-	else -- if not, we can just print it
-		print(e)
-	end
-end
 
 -- shallow print of key names
 M.print_category = function()
@@ -33,16 +17,21 @@ M.print_category = function()
 		end
 	end
 
-	DeepPrint(categories)
+	utils.DeepPrint(categories)
 end
 
 M.print_subcategory = function(category, subcategory)
 	print("Category: ", category)
 
-	local art = M.art[category][subcategory]
+	local print_art = M.art[category][subcategory]
 
-	DeepPrint(art)
+	utils.DeepPrint(print_art)
 end
+
+M.preview = function()
+	ui.open()
+end
+
 
 M.get_random = function(category, subcategory)
 	local pieces = M.art[category][subcategory]
