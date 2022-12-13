@@ -14,4 +14,16 @@ M.DeepPrint = function(e)
 	end
 end
 
+M.get_random_key = function(t)
+	local keys = {}
+
+	for k, _ in pairs(t) do
+		table.insert(keys, k)
+	end
+
+	local random_key = math.random(1, #keys)
+	local actual_key = keys[random_key]
+	return actual_key
+end
+
 return M

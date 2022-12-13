@@ -49,4 +49,12 @@ M.get_random = function(category, subcategory)
 	return piece
 end
 
+M.get_random_global = function()
+	local category = utils.get_random_key(M.art);
+	local subcategories = M.art[category]
+	local subcategory_key = utils.get_random_key(subcategories)
+	local piece = M.get_random(category, subcategory_key)
+	return piece
+end
+
 return M
