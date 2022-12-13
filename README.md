@@ -42,6 +42,22 @@ Or get one at random
 local options = {
 	header = {
 		...
+	    val = ascii.get_random_global(),
+		...
+	},
+}
+...
+```
+
+
+Or get one at random from a subcategory.
+
+
+```lua
+...
+local options = {
+	header = {
+		...
 	    val = ascii.get_random("animals", "dogs"),
 		...
 	},
