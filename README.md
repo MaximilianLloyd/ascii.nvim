@@ -101,6 +101,19 @@ Get a random art piece from a subcategory.
 lua require("ascii").get_random("animals", "dogs")
 ```
 
+## Telescope integration
+
+```lua
+telescope.load_extension("ascii")
+```
+
+Then you can do 
+```
+Telescope ascii
+```
+
+To fuzzy search. The name is the path you can use in your config.
+
 ## Categories
 
 - Animals
@@ -129,5 +142,5 @@ I created a small [rust cli tool](https://github.com/MaximilianLloyd/ascii-lua-t
 
 ### Todo
 
-- [ ] Implement telescope extension
+- [x] Implement telescope extension
 - [ ] Random independant of category
