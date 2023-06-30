@@ -3,7 +3,8 @@ local undertale = require("ascii.gaming.undertale")
 
 local M = {
 	pacman = pacman,
-	undertale = undertale
+	undertale = undertale,
+	doom = doom,
 }
 
 return M
