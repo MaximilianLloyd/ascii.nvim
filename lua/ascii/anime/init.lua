@@ -1,4 +1,4 @@
-local onepiece = require("onepiece")
+local onepiece = require("ascii.anime.onepiece")
 
 local M = {
     onepiece = onepiece
