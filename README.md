@@ -14,7 +14,7 @@ A curated collection of ascii art and utilities for your Neovim dashboard.
 ```lua
 ...
 use({ "MaximilianLloyd/ascii.nvim", requires = {
-	"MunifTanjim/nui.nvim" 
+	"MunifTanjim/nui.nvim"
 } })
 ...
 ```
@@ -49,9 +49,7 @@ local options = {
 ...
 ```
 
-
 Or get one at random from a subcategory.
-
 
 ```lua
 ...
@@ -107,7 +105,8 @@ lua require("ascii").get_random("animals", "dogs")
 telescope.load_extension("ascii")
 ```
 
-Then you can do 
+Then you can do
+
 ```
 Telescope ascii
 ```
@@ -117,22 +116,28 @@ To fuzzy search. The name is the path you can use in your config.
 ## Categories
 
 - Animals
-	- [Dogs](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/dogs.lua)
-	- [Cats](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/cats.lua)
-	- [Lions](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/lions.lua)
-	- [Pandas](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/pandas.lua)
+  - [Dogs](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/dogs.lua)
+  - [Cats](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/cats.lua)
+  - [Lions](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/lions.lua)
+  - [Pandas](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/pandas.lua)
+- Anime
+  - [One Piece](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/anime/onepiece.lua)
+- Movies
+  - [Starwars](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/movies/starwars.lua)
 - Gaming
-	- [Pacman](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/gaming/pacman.lua)
-	- [Undertale](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/gaming/undertale.lua)
+  - [Doom](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/gaming/doom.lua)
+  - [Pacman](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/gaming/pacman.lua)
+  - [Undertale](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/gaming/undertale.lua)
 - Misc
-	- [Skulls](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/misc/skulls.lua)
-	- [Krakens](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/misc/krakens.lua)
+  - [Hydra](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/misc/hydra.lua)
+  - [Skulls](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/misc/skulls.lua)
+  - [Krakens](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/misc/krakens.lua)
 - Text
-	- [Slogons](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/text/slogons.lua)
-	- [Neovim](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/text/neovim.lua)
-	- [Doom](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/text/doom.lua)
+  - [Slogons](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/text/slogons.lua)
+  - [Neovim](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/text/neovim.lua)
+  - [Doom](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/text/doom.lua)
 - Planets
-	- [Planets](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/planets/planets.lua)
+  - [Planets](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/planets/planets.lua)
 
 ## Create your own and contribute
 
