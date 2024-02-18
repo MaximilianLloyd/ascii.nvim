@@ -1,5 +1,5 @@
 local utils = require("ascii.utils")
-local ui = require("ascii.ui")
+
 
 local art = require("ascii.art")
 
@@ -29,7 +29,7 @@ M.print_subcategory = function(category, subcategory)
 end
 
 M.preview = function()
-	ui.open()
+	require("ascii.ui").open()
 end
 
 
