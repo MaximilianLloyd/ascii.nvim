@@ -6,7 +6,7 @@ A curated collection of ascii art and utilities for your Neovim dashboard.
 
 ---
 
-## Installaton
+## Installation
 
 - Install using your favorite plugin manager (here i'm using packer)
 - Nui.nvim is used for preview functionality

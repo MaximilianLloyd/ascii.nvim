@@ -5,6 +5,8 @@ local misc = require("ascii.misc")
 local gaming = require("ascii.gaming")
 local planets = require("ascii.planets")
 local movies = require("ascii.movies")
+local series = require("ascii.series")
+local linux = require("ascii.linux")
 
 local M = {
 	animals = animals,
@@ -14,6 +16,8 @@ local M = {
 	gaming = gaming,
 	planets = planets,
 	movies = movies,
+        series = series,
+        linux = linux
 }
 
 return M
