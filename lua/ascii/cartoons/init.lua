@@ -2,11 +2,11 @@ local utils = require("ascii.utils")
 
 local M = {}
 
-local categories = {
+M.categories = {
 	"simpsons",
 	"futurama",
 }
 
-utils.lazy_load(M, "ascii.cartoons.", categories)
+utils.lazy_load(M, "ascii.cartoons.", M.categories)
 
 return M

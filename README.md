@@ -131,15 +131,25 @@ To fuzzy search. The name is the path you can use in your config.
   - [Cats](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/cats.lua)
   - [Lions](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/lions.lua)
   - [Pandas](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/pandas.lua)
+  - [Dinosaurs](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/animals/dinosaurs.lua)
 - Anime
   - [One Piece](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/anime/onepiece.lua)
 - Movies
   - [Starwars](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/movies/starwars.lua)
   - [Toystory](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/movies/toystory.lua)
+- Cartoons
+  - [Simpsons](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/cartoons/simpsons.lua)
+  - [Futurama](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/cartoons/futurama.lua)
 - Gaming
   - [Doom](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/gaming/doom.lua)
   - [Pacman](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/gaming/pacman.lua)
   - [Undertale](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/gaming/undertale.lua)
+- Computers
+  - [Atari](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/computers/atari.lua)
+  - [Amiga](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/computers/amiga.lua)
+  - [Apple](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/computers/apple.lua)
+  - [Linux](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/computers/linux.lua)
+  - [Consoles](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/computers/consoles.lua)
 - Misc
   - [Hydra](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/misc/hydra.lua)
   - [Skulls](https://github.com/MaximilianLloyd/ascii.nvim/blob/master/lua/ascii/misc/skulls.lua)

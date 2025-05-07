@@ -2,13 +2,14 @@ local utils = require("ascii.utils")
 
 local M = {}
 
-local categories = {
+M.categories = {
 	"consoles",
 	"linux",
 	"amiga",
 	"atari",
+	"apple",
 }
 
-utils.lazy_load(M, "ascii.computers.", categories)
+utils.lazy_load(M, "ascii.computers.", M.categories)
 
 return M
