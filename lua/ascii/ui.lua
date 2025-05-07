@@ -13,25 +13,41 @@ local config = {
 
 local M = {}
 
-
 M.open = function()
 	local menu_items = {}
 
-	for k, v in pairs(ascii_art) do --pseudocode
-		table.insert(menu_items, Menu.item(k))
+	-- Use the categories array from ascii_art
+	for _, category_name in ipairs(ascii_art.categories) do
+		table.insert(menu_items, Menu.item(category_name))
 	end
 
 	local menu = Create_menu(menu_items, function(item)
+		local category_name = item.text
+		
+		-- Make sure the category is loaded
+		if not ascii_art[category_name] then
+			ascii_art[category_name] = require("ascii." .. category_name)
+		end
+		
 		local sub_menu_items = {}
-
-		for sk, _ in pairs(ascii_art[item.text]) do --pseudocode
-			table.insert(sub_menu_items, Menu.item(sk))
+		local category = ascii_art[category_name]
+		
+		-- Use the categories array from the category module
+		for _, subcategory_name in ipairs(category.categories) do
+			table.insert(sub_menu_items, Menu.item(subcategory_name))
 		end
 
 		local sub_menu = Create_menu(sub_menu_items, function(subitem)
-			local category_art = ascii_art[item.text][subitem.text]
-
-			M.create_window(category_art, item.text, subitem.text)
+			local subcategory_name = subitem.text
+			
+			-- Make sure the subcategory is loaded
+			if not ascii_art[category_name][subcategory_name] then
+				-- Trigger lazy loading
+				local _ = ascii_art[category_name][subcategory_name]
+			end
+			
+			local category_art = ascii_art[category_name][subcategory_name]
+			M.create_window(category_art, category_name, subcategory_name)
 		end)
 
 		sub_menu:mount()
@@ -54,7 +70,6 @@ M.create_window = function(art_pieces, category, subcategory)
 		length = length + 1
 	end
 
-
 	local popup = Popup({
 		enter = true,
 		focusable = true,
@@ -70,7 +85,6 @@ M.create_window = function(art_pieces, category, subcategory)
 		win_options = {
 			winhighlight = "Normal:Normal,FloatBorder:SpecialChar",
 		},
-
 	})
 
 	local ok = popup:map("n", "<esc>", function(bufnr)
@@ -78,22 +92,22 @@ M.create_window = function(art_pieces, category, subcategory)
 	end, { noremap = true })
 
 	local ok = popup:map("n", "k", function(bufnr)
-		if (index > 1) then
+		if index > 1 then
 			index = index - 1
 			local piece_key = indexes[index]
 			local piece = art_pieces[piece_key]
 			Clear_buffer(popup.bufnr)
-			Draw_piece(piece, category, subcategory, piece_key,  popup.bufnr, index, length)
+			Draw_piece(piece, category, subcategory, piece_key, popup.bufnr, index, length)
 		end
 	end, { noremap = true })
 
 	local ok = popup:map("n", "j", function(bufnr)
-		if (index < length) then
+		if index < length then
 			index = index + 1
 			local piece_key = indexes[index]
 			local piece = art_pieces[piece_key]
 			Clear_buffer(popup.bufnr)
-			Draw_piece(piece, category, subcategory, piece_key,  popup.bufnr, index, length)
+			Draw_piece(piece, category, subcategory, piece_key, popup.bufnr, index, length)
 		end
 	end, { noremap = true })
 
@@ -115,7 +129,19 @@ end
 function Draw_piece(piece, category, subcategory, piece_key, bufnr, index, length)
 	local line = NuiLine()
 
-	line:append("Path: " .. "ascii.art." .. category .. "." .. subcategory .. "." .. piece_key .. " | " .. index .. "/" .. length)
+	line:append(
+		"Path: "
+			.. "ascii.art."
+			.. category
+			.. "."
+			.. subcategory
+			.. "."
+			.. piece_key
+			.. " | "
+			.. index
+			.. "/"
+			.. length
+	)
 	local ns_id, linenr_start = -1, 1
 	vim.api.nvim_buf_set_lines(bufnr, 1, 1, false, piece)
 	line:render(bufnr, ns_id, linenr_start)
@@ -147,12 +173,11 @@ function Create_menu(items, on_submit)
 			close = { "<Esc>", "<C-c>" },
 			submit = { "<CR>", "<Space>" },
 		},
-		on_close = function()
-		end,
+		on_close = function() end,
 		on_submit = on_submit,
 	})
 
 	return menu
 end
 
-return M;
+return M

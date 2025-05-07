@@ -26,4 +26,17 @@ M.get_random_key = function(t)
 	return actual_key
 end
 
+M.lazy_load = function(module, path, modules)
+	setmetatable(module, {
+		__index = function(t, key)
+			if vim.tbl_contains(modules, key) then
+				local mod = require(path .. key)
+				t[key] = mod -- Cache the loaded module
+				return mod
+			end
+			return nil
+		end,
+	})
+end
+
 return M

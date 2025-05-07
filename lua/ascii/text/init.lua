@@ -1,11 +1,13 @@
-local slogons = require("ascii.text.slogons")
-local doom = require("ascii.text.doom")
-local neovim = require("ascii.text.neovim")
+local utils = require("ascii.utils")
 
-local M = {
-	slogons = slogons,
-	doom = doom,
-	neovim = neovim,
+local M = {}
+
+M.categories = {
+	"slogons",
+	"doom",
+	"neovim",
 }
+
+utils.lazy_load(M, "ascii.text.", M.categories)
 
 return M
