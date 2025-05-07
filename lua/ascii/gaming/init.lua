@@ -1,11 +1,13 @@
-local pacman = require("ascii.gaming.pacman")
-local undertale = require("ascii.gaming.undertale")
-local doom = require("ascii.gaming.doom")
+local utils = require("ascii.utils")
 
-local M = {
-	pacman = pacman,
-	undertale = undertale,
-	doom = doom,
+local M = {}
+
+local categories = {
+	"pacman",
+	"undertale",
+	"doom",
 }
+
+utils.lazy_load(M, "ascii.gaming.", categories)
 
 return M

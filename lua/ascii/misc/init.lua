@@ -1,11 +1,13 @@
-local skulls = require("ascii.misc.skulls")
-local krakens = require("ascii.misc.krakens")
-local hydra = require("ascii.misc.hydra")
+local utils = require("ascii.utils")
 
-local M = {
-	skulls = skulls,
-	krakens = krakens,
-	hydra = hydra,
+local M = {}
+
+local categories = {
+	"skulls",
+	"krakens",
+	"hydra",
 }
+
+utils.lazy_load(M, "ascii.misc.", categories)
 
 return M

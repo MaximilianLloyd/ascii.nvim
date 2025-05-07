@@ -1,13 +1,15 @@
-local dogs = require("ascii.animals.dogs")
-local cats = require("ascii.animals.cats")
-local lions = require("ascii.animals.lions")
-local pandas = require("ascii.animals.pandas")
+local utils = require("ascii.utils")
 
-local M = {
-	dogs = dogs,
-	cats = cats,
-	lions = lions,
-	pandas = pandas
+local M = {}
+
+local categories = {
+	"dogs",
+	"cats",
+	"lions",
+	"pandas",
+	"dinosaurs",
 }
+
+utils.lazy_load(M, "ascii.animals.", categories)
 
 return M

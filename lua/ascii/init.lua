@@ -1,11 +1,15 @@
 local utils = require("ascii.utils")
 
-
 local art = require("ascii.art")
 
 local M = {
-	art = art
+	art = art,
 }
+
+-- Simple setup function for lazy.nvim
+M.setup = function()
+	return M
+end
 
 -- shallow print of key names
 M.print_category = function()
@@ -32,7 +36,6 @@ M.preview = function()
 	require("ascii.ui").open()
 end
 
-
 M.get_random = function(category, subcategory)
 	local pieces = M.art[category][subcategory]
 
@@ -50,7 +53,7 @@ M.get_random = function(category, subcategory)
 end
 
 M.get_random_global = function()
-	local category = utils.get_random_key(M.art);
+	local category = utils.get_random_key(M.art)
 	local subcategories = M.art[category]
 	local subcategory_key = utils.get_random_key(subcategories)
 	local piece = M.get_random(category, subcategory_key)
